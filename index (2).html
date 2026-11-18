@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oye! Lucky — Desi Kitchen, Kudlu Gate, Bengaluru</title>
+<meta name="description" content="Oye! Lucky — Desi Kitchen in Kudlu Gate, Bengaluru. Thalis, tandoor, curries and kheer. Order for delivery on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#221F1B; --ink-soft:rgba(34,31,27,.68); --ink-faint:rgba(34,31,27,.14);
+    --paper:#F7F3EC; --red:#C7102E; --veg:#1E8E3E;
+    scroll-behavior:smooth;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+  .topbar{border-bottom:1px solid var(--ink-faint);position:sticky;top:0;background:rgba(247,243,236,.94);backdrop-filter:blur(6px);z-index:10}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:12px;padding-bottom:12px}
+  .brandmark{display:flex;align-items:baseline;gap:6px;font-family:'Archivo Black',sans-serif;font-size:1.05rem;text-decoration:none;color:var(--red)}
+  .brandmark .oye{font-family:'Caveat',cursive;font-weight:700;font-size:1.5rem;color:var(--ink);display:inline-block;transform:rotate(-4deg)}
+  .navlinks{display:flex;gap:20px}
+  .navlinks a{font-size:.9rem;text-decoration:none;color:var(--ink-soft);padding-bottom:2px;border-bottom:1px solid transparent}
+  .navlinks a:hover{color:var(--ink);border-bottom-color:var(--red)}
+
+  .hero{padding:76px 0 56px}
+  .oye-script{font-family:'Caveat',cursive;font-weight:700;font-size:clamp(2.6rem,9vw,4.2rem);color:var(--ink);line-height:.9;display:inline-block;transform:rotate(-3deg);margin-bottom:-6px}
+  .hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(3rem,12vw,5.6rem);line-height:.92;margin:0 0 20px;color:var(--red)}
+  .tagline{font-family:'Caveat',cursive;font-weight:600;font-size:clamp(1.5rem,4vw,1.9rem);margin:0 0 16px}
+  .lede{max-width:46ch;font-size:1.08rem;color:var(--ink-soft);margin:0 0 30px}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;font-weight:600;font-size:.95rem;padding:13px 24px;border-radius:3px;text-decoration:none;border:1.5px solid var(--ink)}
+  .btn-solid{background:var(--ink);color:var(--paper)}
+  .btn-solid:hover{background:var(--red);border-color:var(--red)}
+  .btn-outline{background:transparent;color:var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:var(--paper)}
+
+  section{padding:56px 0}
+  .divider{border:none;border-top:1px solid var(--ink-faint);margin:0}
+  h2{font-family:'Archivo Black',sans-serif;font-size:clamp(1.5rem,4vw,2rem);margin:0 0 14px}
+  h3{font-family:'Archivo Black',sans-serif;font-size:1.15rem;margin:40px 0 4px}
+  .section-lede{max-width:54ch;color:var(--ink-soft);margin:0 0 6px}
+
+  .legend{display:flex;gap:18px;font-size:.85rem;color:var(--ink-soft);margin-top:14px}
+  .legend span{display:flex;align-items:center;gap:7px}
+
+  .menu-list{margin-top:10px}
+  .menu-row{display:flex;align-items:flex-start;gap:12px;padding:16px 0;border-bottom:1px solid var(--ink-faint)}
+  .menu-list .menu-row:first-child{border-top:1px solid var(--ink-faint)}
+  .mi{flex:1;display:flex;flex-direction:column}
+  .name{font-weight:600;font-size:1.05rem}
+  .desc{font-size:.9rem;color:var(--ink-soft);margin-top:2px;max-width:48ch}
+  .price{font-weight:600;white-space:nowrap}
+  .dot{flex:0 0 14px;width:14px;height:14px;border:1.5px solid;border-radius:2px;margin-top:5px;position:relative}
+  .dot::after{content:"";position:absolute;inset:2.5px;border-radius:50%}
+  .dot.veg{border-color:var(--veg)} .dot.veg::after{background:var(--veg)}
+  .dot.nonveg{border-color:var(--red)} .dot.nonveg::after{background:var(--red)}
+  .dot.none{border-color:transparent}
+  .thali-block .menu-row:first-child{border-top:1px solid var(--ink-faint)}
+  .menu-note{margin-top:26px;font-size:.92rem;color:var(--ink-soft);font-style:italic}
+
+  .order-box{border:1.5px solid var(--ink);border-radius:4px;padding:30px 28px;margin-top:22px}
+  .order-box p{margin:0 0 20px;max-width:50ch}
+  .phone-line{font-family:'Archivo Black',sans-serif;font-size:1.5rem;margin:0 0 18px}
+
+  dl.visit{margin:22px 0 0}
+  dl.visit dt{font-weight:600;font-size:.82rem;color:var(--ink-soft);margin-bottom:4px}
+  dl.visit dd{margin:0 0 20px;font-size:1.02rem}
+
+  footer{padding:40px 0 100px;border-top:1px solid var(--ink-faint)}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot-tagline{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--ink-soft)}
+  .copy{font-size:.82rem;color:var(--ink-soft)}
+
+  .mobile-bar{display:none}
+  @media (max-width:640px){
+    .navlinks{gap:14px} .navlinks a{font-size:.82rem}
+    .mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--paper);border-top:1px solid var(--ink-faint)}
+    .mobile-bar a{flex:1;text-align:center}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brandmark"><span class="oye">Oye!</span> LUCKY</a>
+    <nav class="navlinks">
+      <a href="#menu">Menu</a>
+      <a href="#order">Order</a>
+      <a href="#find">Find us</a>
+    </nav>
+  </div>
+</div>
+<div id="top"></div>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="oye-script">Oye!</span>
+    <h1>LUCKY</h1>
+    <p class="tagline">Lucky you, found us.</p>
+    <p class="lede">Desi Kitchen at Kudlu Gate, Bengaluru. A small menu made with love: thalis, tandoor, curries and kheer.</p>
+    <div class="cta-row">
+      <a href="#" class="btn btn-solid" data-wa>Order on WhatsApp</a>
+      <a href="#menu" class="btn btn-outline">See the menu</a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="menu">
+  <div class="wrap">
+    <h2>A small menu, made with love</h2>
+    <p class="section-lede">Good food takes time, care and attention. We started with a thoughtfully curated menu instead of too many dishes. We want every recipe, every flavour and every serving just right before bringing more to your table.</p>
+    <div class="legend">
+      <span><i class="dot veg" style="display:inline-block;margin:0"></i> Veg</span>
+      <span><i class="dot nonveg" style="display:inline-block;margin:0"></i> Non-veg</span>
+    </div>
+
+    <h3>Thalis</h3>
+    <div class="thali-block menu-list">
+<div class="menu-row"><span class="dot nonveg" title="Non-veg"></span><div class="mi"><span class="name">Mutton Curry Thali</span><span class="desc">Desi-style mutton curry, shahi pulao, 2 tandoori rotis, salad, papad & green chutney</span></div><span class="price">₹485</span></div>
+<div class="menu-row"><span class="dot nonveg" title="Non-veg"></span><div class="mi"><span class="name">Chicken Curry Thali</span><span class="desc">Desi-style chicken curry, shahi pulao, 2 tandoori rotis, salad, papad & green chutney</span></div><span class="price">₹385</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Kadai Paneer Thali</span><span class="desc">Kadai paneer, dal tadka, shahi pulao, 2 tandoori rotis, salad, papad & green chutney</span></div><span class="price">₹365</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Paneer Butter Masala Thali</span><span class="desc">Paneer butter masala, dal tadka, shahi pulao, 2 tandoori rotis, salad, papad & green chutney</span></div><span class="price">₹375</span></div>
+    </div>
+
+<h3>Tandoor & kebabs</h3>
+<div class="menu-list">
+<div class="menu-row"><span class="dot nonveg" title="Non-veg"></span><div class="mi"><span class="name">Tandoori Chicken</span><span class="desc">Bhatti-style tandoori chicken</span></div><span class="price">₹390</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Paneer Tikka</span><span class="desc">Bhatti-style paneer tikka</span></div><span class="price">₹330</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Hara Bhara Kebab</span><span class="desc">Punjabi-style kebab</span></div><span class="price">₹285</span></div>
+</div>
+<h3>Curries & dal</h3>
+<div class="menu-list">
+<div class="menu-row"><span class="dot nonveg" title="Non-veg"></span><div class="mi"><span class="name">Desi Mutton Curry</span><span class="desc">Desi-style mutton curry</span></div><span class="price">₹550</span></div>
+<div class="menu-row"><span class="dot nonveg" title="Non-veg"></span><div class="mi"><span class="name">Desi Chicken Curry</span><span class="desc">Desi-style chicken curry</span></div><span class="price">₹370</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Kadai Paneer</span><span class="desc">Authentic Delhi-style kadai paneer</span></div><span class="price">₹330</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Paneer Butter Masala</span><span class="desc">Punjabi dhaba-style paneer butter masala</span></div><span class="price">₹350</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Dal Makhani</span><span class="desc">Dhaba-style desi creamy dal makhani</span></div><span class="price">₹330</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Dal Tadka</span><span class="desc">Dhaba-style dal tadka</span></div><span class="price">₹220</span></div>
+</div>
+<h3>Rice & breads</h3>
+<div class="menu-list">
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Shahi Pulao</span><span class="desc">Our signature shahi pulao</span></div><span class="price">₹220</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Plain Rice</span><span class="desc">Basmati rice made with love</span></div><span class="price">₹140</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Tandoor Roti</span><span class="desc">Desi tandoor ki khasta roti</span></div><span class="price">₹30</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Butter Tandoori Roti</span><span class="desc">Desi tandoor ki butter roti</span></div><span class="price">₹40</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Naan</span><span class="desc">Dhaba-style naan</span></div><span class="price">₹70</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Butter Naan</span><span class="desc">Dhaba-style butter naan</span></div><span class="price">₹80</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Butter Garlic Naan</span><span class="desc">Dhaba-style butter garlic naan</span></div><span class="price">₹90</span></div>
+</div>
+<h3>Sweet & drinks</h3>
+<div class="menu-list">
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Thandi Kheer</span><span class="desc">Desi-style gaon wali kheer</span></div><span class="price">₹215</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Lassi</span><span class="desc">Kulhad lassi</span></div><span class="price">₹135</span></div>
+<div class="menu-row"><span class="dot veg" title="Veg"></span><div class="mi"><span class="name">Lemon Water</span><span class="desc">Refreshing homemade lemon soda</span></div><span class="price">₹105</span></div>
+<div class="menu-row"><span class="dot none"></span><div class="mi"><span class="name">Cold Drink</span></div><span class="price">MRP</span></div>
+<div class="menu-row"><span class="dot none"></span><div class="mi"><span class="name">Water Bottle</span></div><span class="price">MRP</span></div>
+</div>
+
+    <p class="menu-note">Made fresh and served with love. Gravy portions are fixed, and refills are not available.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="order">
+  <div class="wrap">
+    <h2>Order for delivery</h2>
+    <div class="order-box">
+      <p>Send us your order and delivery address on WhatsApp, or call us.</p>
+      <p class="phone-line" data-phone>+91 98867 96137</p>
+      <div class="cta-row">
+        <a href="#" class="btn btn-solid" data-wa>Order on WhatsApp</a>
+        <a href="#" class="btn btn-outline" data-call>Call us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="find">
+  <div class="wrap">
+    <h2>Find us</h2>
+    <dl class="visit">
+      <dt>Address</dt>
+      <dd>Shop No. 2, Sy No. 102/3, Silver County Rd<br>Near S M Grand Mart, Haralur<br>Kudlu Gate, Bengaluru, Karnataka 560068</dd>
+      <dt>Instagram</dt>
+      <dd><a href="https://www.instagram.com/oye_lucky.blr">@oye_lucky.blr</a></dd>
+    </dl>
+    <div class="cta-row">
+      <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Shop+No+2+Sy+No+102%2F3+Silver+County+Rd+near+S+M+Grand+Mart+Haralur+Bengaluru+Karnataka+560068">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span class="foot-tagline">Lucky you, found us.</span>
+      <span class="copy">© 2026 Oye! Lucky · Desi Kitchen · Kudlu Gate, Bengaluru</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="#" class="btn btn-solid" data-wa>WhatsApp</a>
+  <a href="#" class="btn btn-outline" data-call>Call</a>
+</div>
+
+<script>
+  // Change the number here. Nothing else on the page needs editing.
+  var PHONE_INTL = "919886796137";      // country code + number, no spaces or +
+  var PHONE_SHOW = "+91 98867 96137";   // how it appears on the page
+  var MSG = "Hi Oye! Lucky, I'd like to order for delivery.\n\nOrder:\nName:\nAddress:";
+
+  var wa = "https://wa.me/" + PHONE_INTL + "?text=" + encodeURIComponent(MSG);
+  document.querySelectorAll("[data-wa]").forEach(function(a){ a.href = wa; a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll("[data-call]").forEach(function(a){ a.href = "tel:+" + PHONE_INTL; });
+  document.querySelectorAll("[data-phone]").forEach(function(p){ p.textContent = PHONE_SHOW; });
+</script>
+</body>
+</html>
